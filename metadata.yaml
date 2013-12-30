@@ -1,0 +1,17 @@
+name: flask
+summary: <Fill in summary here>
+maintainer: Ubuntu <Ubuntu@ip-172-31-24-81.us-west-2.compute.internal>
+description: |
+  <Multi-line description here>
+categories:
+  - misc
+subordinate: false
+provides:
+  provides-relation:
+    interface: interface-name
+requires:
+  requires-relation:
+    interface: interface-name
+peers:
+  peer-relation:
+    interface: interface-name
