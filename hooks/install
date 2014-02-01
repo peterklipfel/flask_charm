@@ -2,10 +2,11 @@
 
 set -e
 
-apt-get install -y python2.7 pip
-pip install flask
+apt-get install -y python2.7 python-pip unzip
 
-git clone git@github.com:peterklipfel/rabbit_flask.git
-cd rabbit_flask
-
+wget https://github.com/peterklipfel/rabbit_flask/archive/master.zip
+unzip master.zip
+cd rabbit_flask-master
+pip install -r requirements.txt
+cd ..
 
