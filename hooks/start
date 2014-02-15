@@ -3,5 +3,5 @@
 # Note that currently this is run directly after install
 # i.e. 'service apache2 start'
 
-uwsgi --http :80 --socket 127.0.0.1:3031 --wsgi-file apiv2.py --callable app --processes 4 --threads 2 --stats 127.0.0.1:9191 --pidfile ./uwsgi.pid
+uwsgi --http :5000 --socket 127.0.0.1:3031 --wsgi-file `pwd`/rabbit_flask-master/api.py --callable app --processes 4 --threads 2 --stats 127.0.0.1:9191 --pidfile ./uwsgi.pid
 
