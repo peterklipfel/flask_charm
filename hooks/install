@@ -14,7 +14,9 @@ rm /etc/nginx/sites-enabled/default
 sed s/theipaddress/`ifconfig eth0 | grep "inet addr" | awk -F: '{print $2}' | awk '{print $1}'`/ nginx.conf > api_nginx.conf
 ln -s `pwd`/api_nginx.conf /etc/nginx/sites-enabled/api_nginx.conf
 
-crontab -u root `pwd`/api_crontab
+scriptPath=`pwd`/checker.sh
+sed "s,injectScriptHere,$scriptPath," api_crontab > crontab
+crontab -u root `pwd`/crontab
 
 open-port 80/tcp
 
